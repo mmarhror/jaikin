@@ -33,32 +33,32 @@ public class AnimationController {
         if (points == null || points.size() < 3) {
             return;
         }
-
+      
         originalPoints = new ArrayList<>(points);
         currentPoints = new ArrayList<>(points);
-
+      
         currentStep = 0;
         state = AppState.ANIMATING;
-
-        timer = new Timer(1000, e -> nextStep());
-
+      
+        canvas.setChaikinPoints(currentPoints);
+      
+        timer = new Timer(500, e -> nextStep());
         timer.start();
     }
 
     private void nextStep() {
-
-        currentPoints = algorithm.nextPoints(currentPoints);
-
-        currentStep++;
-
-        canvas.setChaikinPoints(currentPoints);
-
+    
         if (currentStep == 7) {
-            timer.stop();
-
             currentPoints = new ArrayList<>(originalPoints);
             currentStep = 0;
-            state = AppState.DRAWING;
+        
+            canvas.setChaikinPoints(currentPoints);
+            return;
         }
+      
+        currentPoints = algorithm.nextPoints(currentPoints);
+        currentStep++;
+      
+        canvas.setChaikinPoints(currentPoints);
     }
 }
