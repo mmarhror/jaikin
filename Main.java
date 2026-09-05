@@ -1,6 +1,7 @@
 import ui.Canvas; 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 public class Main {
@@ -8,6 +9,7 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Chaikin's Algorithm");
             Canvas canvas = new Canvas();
+
             frame.add(canvas);
             frame.setSize(800, 600); 
             frame.setResizable(false); 
