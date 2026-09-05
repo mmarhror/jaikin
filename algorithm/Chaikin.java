@@ -16,6 +16,8 @@ public class Chaikin {
 
     List<Point> newPoints = new ArrayList<>();
 
+    newPoints.add(points.get(0));
+
     for (int i = 1; i < points.size(); i++) {
       Point p1 = points.get(i - 1);
       Point p2 = points.get(i);
@@ -32,6 +34,8 @@ public class Chaikin {
       newPoints.add(new Point(lx, ly));
       newPoints.add(new Point(rx, ry));
     }
+
+    newPoints.add(points.get(points.size() - 1));
 
     return newPoints;
   }
