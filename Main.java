@@ -25,6 +25,7 @@ public class Main {
                         System.exit(0); 
                     }else if (e.getKeyCode() == KeyEvent.VK_C && e.isControlDown()) {
                         canvas.clear(); 
+                        controller.clear(); 
                     } else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                         controller.startAnimation(canvas.getPoints());
                     }   

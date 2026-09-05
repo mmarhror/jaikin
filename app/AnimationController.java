@@ -61,4 +61,18 @@ public class AnimationController {
       
         canvas.setChaikinPoints(currentPoints);
     }
+
+    public void clear() {
+        if (timer != null) {
+            timer.stop();
+        }
+      
+        originalPoints = new ArrayList<>();
+        currentPoints = new ArrayList<>();
+      
+        currentStep = 0;
+        state = AppState.DRAWING;
+      
+        canvas.clear();
+    }
 }
