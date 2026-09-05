@@ -16,16 +16,4 @@ public class Point {
   public double getY() {
     return y;
   }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj) return true;
-
-    if (obj == null || obj.getClass() != this.getClass()) {
-      return false;
-    }
-
-    Point other = (Point) obj;
-    return Double.compare(other.x, x) == 0 && Double.compare(other.y, y) == 0;
-  }
 }
