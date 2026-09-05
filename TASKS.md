@@ -16,6 +16,7 @@ Responsible for the mathematical and algorithmic part of the project.
 - Return a new list of points without modifying the original.
 - Implement unit tests.
 
+
 ### Suggested files
 
 ```text
