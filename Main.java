@@ -2,6 +2,9 @@ import ui.Canvas;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
+import algorithm.Chaikin;
+import app.AnimationController;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 public class Main {
@@ -9,6 +12,8 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Chaikin's Algorithm");
             Canvas canvas = new Canvas();
+            Chaikin algorithm = new Chaikin();
+            AnimationController controller = new AnimationController(algorithm, canvas);
 
             frame.add(canvas);
             frame.setSize(800, 600); 
@@ -20,7 +25,9 @@ public class Main {
                         System.exit(0); 
                     }else if (e.getKeyCode() == KeyEvent.VK_C && e.isControlDown()) {
                         canvas.clear(); 
-                    }
+                    } else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                        controller.startAnimation(canvas.getPoints());
+                    }   
 
                     
                 }
